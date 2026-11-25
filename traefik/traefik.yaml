@@ -1,0 +1,24 @@
+# Lola Relate - Static Traefik Configuration Template
+# TCP EntryPoints for SNI database routing
+
+entryPoints:
+  postgres:
+    address: ":5432"
+  mysql:
+    address: ":3306"
+  sqlserver:
+    address: ":1433"
+  traefik:
+    address: ":8085"
+
+api:
+  dashboard: true
+  insecure: true
+
+providers:
+  file:
+    directory: "/etc/traefik/dynamic"
+    watch: true
+
+log:
+  level: INFO

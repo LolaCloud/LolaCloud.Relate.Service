@@ -1,0 +1,8 @@
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS instance_name VARCHAR(100);
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS engine VARCHAR(50);
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS s3_bucket VARCHAR(63) DEFAULT 'lola-relate-backups';
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS s3_prefix VARCHAR(255);
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS s3_key TEXT;
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS completed_at TIMESTAMPTZ;
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS error_message TEXT;
+ALTER TABLE database_backups ADD COLUMN IF NOT EXISTS backup_type VARCHAR(50) DEFAULT 'MANUAL_SNAPSHOT';

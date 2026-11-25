@@ -1,0 +1,13 @@
+tcp:
+  routers:
+    db-teste:
+      entryPoints:
+        - "postgres"
+      rule: "HostSNI(`teste-db.lola-cloud.dev`)"
+      service: "db-teste-svc"
+      tls: {}
+  services:
+    db-teste-svc:
+      loadBalancer:
+        servers:
+          - address: "lola-relate-db-teste:5432"

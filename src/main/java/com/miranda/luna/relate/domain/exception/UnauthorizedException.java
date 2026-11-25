@@ -1,0 +1,7 @@
+package com.miranda.luna.relate.domain.exception;
+
+public class UnauthorizedException extends RuntimeException {
+    public UnauthorizedException(String message) {
+        super(message);
+    }
+}

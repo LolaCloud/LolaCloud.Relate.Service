@@ -1,0 +1,6 @@
+ALTER TABLE database_instances ADD COLUMN IF NOT EXISTS runway_integrated BOOLEAN NOT NULL DEFAULT FALSE;
+ALTER TABLE database_instances ADD COLUMN IF NOT EXISTS runway_record_id UUID;
+ALTER TABLE database_instances ADD COLUMN IF NOT EXISTS dns_zone_id VARCHAR(100);
+ALTER TABLE database_instances ADD COLUMN IF NOT EXISTS dns_zone_name VARCHAR(100);
+ALTER TABLE database_instances ADD COLUMN IF NOT EXISTS wan_ip VARCHAR(50);
+ALTER TABLE database_instances ADD COLUMN IF NOT EXISTS ddns_enabled BOOLEAN NOT NULL DEFAULT TRUE;
